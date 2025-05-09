@@ -1,0 +1,3 @@
+git add .gitattributes
+git commit -m "Remove best.h5 from Git LFS and history"
+
