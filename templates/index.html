@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!-- Home / Carousel -->
+<section id="home" class="carousel">
+    <div class="slide active">Your Mental Health Matters 💙</div>
+    <div class="slide">Analyze Sentiment from Text 🧠</div>
+    <div class="slide">Detect Signs of Depression in Tweets 🕊️</div>
+</section>
+
+<!-- Predict Section -->
+<section id="predict" class="predict-section">
+    <h2>Depression Detection</h2>
+    <p>Enter your tweet/message below to predict its sentiment</p>
+    <form action="/" method="POST">
+        <input type="text" name="tweet" placeholder="Enter your tweet..." required>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if sentiments %}
+    <div class="results">
+        <table>
+            <tr>
+                <th>Tweet</th>
+                <th>Sentiment</th>
+                <th>Confidence</th>
+                <th>Action</th>
+            </tr>
+            {% for tweet in sentiments %}
+            <tr>
+                <td>{{ tweet.tweets }}</td>
+                <td>{{ tweet.sentiment }}</td>
+                <td>{{ tweet.score }}</td>
+                <td><a href="/delete/{{ tweet.id }}">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+    <h2>About This Project</h2>
+    <p>This web application uses sentiment analysis and machine learning to detect possible signs of depression from tweets or text messages. Built with Flask and a deep learning backend, it aims to assist early detection.</p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <p>Have questions or want to collaborate? Reach out!</p>
+    <p>Email: support@detectmood.ai</p>
+</section>
+{% endblock body %}

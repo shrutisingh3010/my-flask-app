@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f9ff;
+    color: #333;
+}
+
+/* Navbar */
+nav {
+    background-color: #0d47a1;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+/* Carousel */
+.carousel {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    animation: fadeSlide 9s infinite;
+}
+
+@keyframes fadeSlide {
+    0% { content: "Your Mental Health Matters 💙"; }
+    33% { content: "Analyze Sentiment from Text 🧠"; }
+    66% { content: "Detect Signs of Depression in Tweets 🕊️"; }
+}
+
+/* Sections */
+section {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #0d47a1;
+    margin-bottom: 20px;
+}
+
+/* Form */
+.predict-section input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0d47a1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1565c0;
+}
+
+/* Table */
+table {
+    margin: 30px auto;
+    width: 90%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+}
+
+/* About & Contact */
+.about-section, .contact-section {
+    background-color: #e8f0fe;
+    border-radius: 12px;
+    margin-top: 20px;
+}
